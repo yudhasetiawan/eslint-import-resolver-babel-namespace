@@ -36,15 +36,29 @@ const lookupBabelConfiguration = (directory) => {
     const babelrcJson = JSON5.parse(babelrc.content);
 
     if (babelrcJson && isArray(babelrcJson.plugins)) {
-        const pluginConfig = babelrcJson.plugins.find((plugin) => plugin[0] === 'namespace');
+        const namespacePlugin = babelrcJson.plugins.find((plugin) => {
+            let pluginName = plugin;
 
-        if (pluginConfig) {
+            if (isArray(pluginName)) {
+                pluginName = pluginName[0];
+            }
+
+            return pluginName === 'namespace';
+        });
+
+        if (namespacePlugin) {
+            let pluginConfig = {};
+
+            if (isArray(namespacePlugin)) {
+                pluginConfig = namespacePlugin[1];
+            }
+
             debug(
                 'Babel plugin module namespace is enabled using configuration: ',
-                pluginConfig[1]
+                pluginConfig
             );
 
-            return pluginConfig[1];
+            return pluginConfig;
         }
     }
 
