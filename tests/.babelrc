@@ -1,0 +1,14 @@
+{
+    "presets": ["es2015"],
+    "plugins": [
+        [
+            "namespace",
+            {
+                "namespaces": {
+                    "test-files": "tests/fixtures",
+                    "underscore": "npm:debug"
+                }
+            }
+        ]
+    ]
+}
