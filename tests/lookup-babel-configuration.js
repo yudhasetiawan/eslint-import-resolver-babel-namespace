@@ -25,6 +25,17 @@ describe('Eslint plugin import Babel module namespace', () => {
             });
         });
 
+        it('should support if the plugin does not provide any options', () => {
+            const result = lookupBabelConfiguration(
+                path.resolve(__dirname, '..')
+            );
+
+            expect(result).to.be.an('object');
+
+            // @see ../.babelrc
+            assert.deepEqual(result, {});
+        });
+
         it('should cannot find the .babelrc file', () => {
             const result = lookupBabelConfiguration('/');
 
