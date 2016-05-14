@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/yudhasetiawan/eslint-import-resolver-babel-namespace#readme",
   "dependencies": {
-    "babel-plugin-namespace": "~0.0.3",
+    "babel-plugin-namespace": "^0.1.0",
     "debug": "^2.2.0",
     "eslint-import-resolver-node": "^0.2.0",
     "json5": "^0.5.0",

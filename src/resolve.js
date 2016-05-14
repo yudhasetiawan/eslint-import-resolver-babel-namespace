@@ -6,7 +6,8 @@ import path from 'path';
 import pathIsInside from 'path-is-inside';
 import debugInstance from 'debug';
 import eslintResolver from 'eslint-import-resolver-node';
-import { transformModuleNamespace, generateSourceMaps } from 'babel-plugin-namespace';
+import transformModuleNamespace from 'babel-plugin-namespace/lib/transform-namespace';
+import generateSourceMaps from 'babel-plugin-namespace/lib/generate-source-maps';
 import lookupBabelConfiguration from ':lookup-babel-configuration';
 
 const debug = debugInstance('eslint:plugin:import-resolver-babel-namespace:resolver');
