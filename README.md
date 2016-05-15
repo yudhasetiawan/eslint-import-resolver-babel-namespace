@@ -1,6 +1,10 @@
-# eslint-import-resolver-babel-namespace
+# eslint-import-resolver-babel-namespace (WIP)
 
 [![Build Status][travis-image]][travis-url] [![npm][npm-badge-version]][npm-url]
+
+> **WIP:** See [babel-plugin-namespace][] :ok_hand:
+
+> So keep your eyes open, please! :see_no_evil:
 
 A [babel-plugin-namespace][babel-namespace] resolver for [eslint-plugin-import][eslint-plugin-import].
 
@@ -30,4 +34,5 @@ MIT, see [LICENSE](LICENSE) for details.
 [travis-image]: https://travis-ci.org/yudhasetiawan/eslint-import-resolver-babel-namespace.svg?branch=master
 [travis-url]: https://travis-ci.org/yudhasetiawan/eslint-import-resolver-babel-namespace
 [babel-namespace]: https://npmjs.com/package/babel-plugin-namespace
+[babel-plugin-namespace]: https://github.com/yudhasetiawan/babel-plugin-namespace
 [eslint-plugin-import]: https://npmjs.com/package/eslint-plugin-import
