@@ -1,10 +1,6 @@
-# eslint-import-resolver-babel-namespace (WIP)
+# eslint-import-resolver-babel-namespace
 
 [![Build Status][travis-image]][travis-url] [![npm][npm-badge-version]][npm-url]
-
-> **WIP:** See [babel-plugin-namespace][] :ok_hand:
-
-> So keep your eyes open, please! :see_no_evil:
 
 A [babel-plugin-namespace][babel-namespace] resolver for [eslint-plugin-import][eslint-plugin-import].
 
