@@ -1,6 +1,6 @@
 # eslint-import-resolver-babel-namespace
 
-[![Build Status][travis-image]][travis-url] [![npm][npm-badge-version]][npm-url]
+[![Build Status][travis-image]][travis-url] [![npm][npm-badge-version]][npm-url] [![Coverage Status][coverage-image]][coverage-url]
 
 A [babel-plugin-namespace][babel-namespace] resolver for [eslint-plugin-import][eslint-plugin-import].
 
@@ -32,3 +32,5 @@ MIT, see [LICENSE](LICENSE) for details.
 [babel-namespace]: https://npmjs.com/package/babel-plugin-namespace
 [babel-plugin-namespace]: https://github.com/yudhasetiawan/babel-plugin-namespace
 [eslint-plugin-import]: https://npmjs.com/package/eslint-plugin-import
+[coverage-image]: https://coveralls.io/repos/github/yudhasetiawan/eslint-import-resolver-babel-namespace/badge.svg?branch=master
+[coverage-url]: https://coveralls.io/github/yudhasetiawan/eslint-import-resolver-babel-namespace?branch=master
