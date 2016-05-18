@@ -17,11 +17,10 @@ const debug = debugInstance('eslint:plugin:import-resolver-babel-namespace:resol
  *
  * @param {String} modulePath The module to resolve
  * @param {String} sourceFile The source file's full path
- * @param {Object} config The configuration of this plugin
  *
  * @return {Object}
  */
-const resolve = (modulePath, sourceFile, config = {}) => { // eslint-disable-line no-unused-vars
+const resolve = (modulePath, sourceFile) => {
     // @see lookupBabelConfiguration()
     const resolvePath = pathIsInside(sourceFile, process.cwd()) ? sourceFile : process.cwd();
     const configurations = lookupBabelConfiguration(resolvePath);
@@ -40,6 +39,7 @@ const resolve = (modulePath, sourceFile, config = {}) => { // eslint-disable-lin
 
     const sourceMaps = generateSourceMaps(configurations);
 
+    /* istanbul ignore else */
     if (sourceMaps) {
         debug('Babel plugin module namespace is using source maps: ', sourceMaps);
     }
@@ -48,16 +48,19 @@ const resolve = (modulePath, sourceFile, config = {}) => { // eslint-disable-lin
         const modulePathTransform = transformModuleNamespace(modulePath, sourceFile, sourceMaps)
             || modulePath;
 
+        /* istanbul ignore else */
         if (modulePathTransform) {
             debug('Modul path is successfully resolved: %s', modulePathTransform);
 
             return eslintResolver.resolve(modulePathTransform, sourceFile);
         }
     } catch (e) {
+        /* istanbul ignore next */
         debug('An exception has been thrown: %s', e.message);
     }
 
-    // How actually we can reach this state? Is it contains bad configuration?
+    // How actually we can reach this state? Is it contains a bad configuration?
+    /* istanbul ignore next */
     return {
         found: false
     };

@@ -30,7 +30,7 @@ describe('Eslint plugin import Babel module namespace', () => {
 
             assert.deepEqual(moduleResolve, {
                 found: true,
-                path: path.resolve('../node_modules/debug/node.js')
+                path: path.resolve('../node_modules/lodash/lodash.js')
             });
         });
 
@@ -150,6 +150,20 @@ describe('Eslint plugin import Babel module namespace', () => {
                 assert.deepEqual(moduleResolveTilde, {
                     found: true,
                     path: path.resolve('../src/index.js')
+                });
+            });
+        });
+
+        describe('can handle invalid statement', () => {
+            it('should return false when source file is invalid', () => {
+                const moduleResolve = resolve(
+                    './fixtures/foo/bar/baz',
+                    path.resolve('../invalid/path')
+                );
+
+                expect(moduleResolve).to.be.an('object');
+                assert.deepEqual(moduleResolve, {
+                    found: false,
                 });
             });
         });

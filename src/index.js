@@ -27,7 +27,7 @@ const interfaceVersion = 2;
  *
  * @return {Object}
  */
-const resolve = (modulePath, sourceFile, config = {}) => {
+const resolve = (modulePath, sourceFile, config) => {
     let results = {
         found: false
     };
@@ -35,6 +35,7 @@ const resolve = (modulePath, sourceFile, config = {}) => {
     try {
         results = resolvePlugin(modulePath, sourceFile, config);
     } catch (error) {
+        /* istanbul ignore next */
         debug('An exception has been thrown: %s', error.message);
     }
 

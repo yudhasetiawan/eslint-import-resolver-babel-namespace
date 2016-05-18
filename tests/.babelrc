@@ -6,7 +6,7 @@
             {
                 "namespaces": {
                     "test-files": "tests/fixtures",
-                    "underscore": "npm:debug"
+                    "underscore": "npm:lodash"
                 }
             }
         ]

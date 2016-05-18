@@ -26,10 +26,12 @@ const cache = {
  * @return {Boolean}
  */
 const isPathExists = (filename) => {
+    /* istanbul ignore if */
     if (!filename) {
         return false;
     }
 
+    /* istanbul ignore if */
     if (!cache.isPathExists[filename]) {
         cache.isPathExists[filename] = fs.existsSync(filename);
     }
@@ -45,6 +47,7 @@ const isPathExists = (filename) => {
  * @return {Object}
  */
 const readFile = (filename) => {
+    /* istanbul ignore if */
     if (!filename) {
         throw new Error('filename must be a string');
     }
@@ -66,6 +69,7 @@ const readFile = (filename) => {
  * @return {Object}
  */
 const lookup = (directory, filename) => {
+    /* istanbul ignore if */
     if (!directory) {
         return null;
     }

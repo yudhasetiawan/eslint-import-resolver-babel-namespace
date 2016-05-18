@@ -10,7 +10,7 @@ import lookupBabelConfiguration from '../src/lookup-babel-configuration';
 describe('Eslint plugin import Babel module namespace', () => {
     describe('can lookup the babel configuration', () => {
         it('should find the .babelrc file and exists', () => {
-            const result = lookupBabelConfiguration(
+            let result = lookupBabelConfiguration(
                 path.resolve(__dirname, 'fixtures/foo/bar/baz')
             );
 
@@ -20,14 +20,35 @@ describe('Eslint plugin import Babel module namespace', () => {
             assert.deepEqual(result, {
                 namespaces: {
                     'test-files': 'tests/fixtures',
-                    underscore: 'npm:debug'
+                    underscore: 'npm:lodash'
                 }
             });
+
+            result = lookupBabelConfiguration(
+                path.resolve(__dirname, 'fixtures/config/no-options')
+            );
+            expect(result).to.be.an('object');
+            assert.deepEqual(result, {});
         });
 
-        it('should cannot find the .babelrc file', () => {
-            const result = lookupBabelConfiguration('/');
+        it('should return null when unable to find the .babelrc file or invalid content', () => {
+            let result = lookupBabelConfiguration('/');
+            expect(result).to.equal(null);
 
+            result = lookupBabelConfiguration(undefined);
+            expect(result).to.equal(null);
+
+            result = lookupBabelConfiguration(null);
+            expect(result).to.equal(null);
+
+            result = lookupBabelConfiguration(
+                path.resolve(__dirname, 'fixtures/config/empty')
+            );
+            expect(result).to.equal(null);
+
+            result = lookupBabelConfiguration(
+                path.resolve(__dirname, 'fixtures/config/no-namespace')
+            );
             expect(result).to.equal(null);
         });
     });
