@@ -40,7 +40,7 @@
   },
   "homepage": "https://github.com/yudhasetiawan/eslint-import-resolver-babel-namespace#readme",
   "dependencies": {
-    "babel-plugin-namespace": "^0.1.0",
+    "babel-plugin-namespace": "^0.2.0",
     "debug": "^2.2.0",
     "eslint-import-resolver-node": "^0.2.0",
     "json5": "^0.5.0",
@@ -55,10 +55,10 @@
     "babel-register": "^6.8.0",
     "chai": "^3.5.0",
     "coveralls": "^2.11.9",
-    "eslint": "^2.9.0",
+    "eslint": "^2.10.0",
     "eslint-config-airbnb-base": "^3.0.1",
     "eslint-plugin-import": "^1.6.1",
-    "mocha": "^2.4.5",
+    "mocha": "^2.4.0",
     "nyc": "^6.4.4"
   }
 }
