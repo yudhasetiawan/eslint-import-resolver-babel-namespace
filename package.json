@@ -25,9 +25,9 @@
   "keywords": [
     "babel",
     "eslint",
-    "plugin",
-    "namespace",
-    "import"
+    "eslint-plugin",
+    "eslint-namespace",
+    "import-resolver"
   ],
   "author": {
     "name": "Yudha Setiawan",
