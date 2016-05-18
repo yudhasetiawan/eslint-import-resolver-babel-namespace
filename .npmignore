@@ -1,3 +1,6 @@
+# Linux
+.fuse_hidden*
+
 # Logs
 logs
 *.log
