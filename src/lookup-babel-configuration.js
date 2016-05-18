@@ -23,7 +23,7 @@ const lookupBabelConfiguration = (directory) => {
         return null;
     }
 
-    debug('Resolving a babel configuration');
+    debug('Resolving a babel configuration at ', directory);
 
     const babelrc = lookup(directory, '.babelrc');
 
