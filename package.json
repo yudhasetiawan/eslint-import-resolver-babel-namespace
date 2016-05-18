@@ -1,6 +1,6 @@
 {
   "name": "eslint-import-resolver-babel-namespace",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "A resolver plugin for eslint-plugin-import to support babel-plugin-namespace",
   "main": "lib/index.js",
   "directories": {
